@@ -313,7 +313,7 @@ elif section == "Factor Performance":
 
     styled = (
         table.style
-        .applymap(sharpe_color, subset=["Sharpe"])
+        .map(sharpe_color, subset=["Sharpe"])
         .format({"Sharpe": lambda v: fmt_num(v, 3)})
         .hide(axis="index")
     )
