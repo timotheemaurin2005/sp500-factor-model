@@ -304,13 +304,3 @@ Read CLAUDE.md. You are Agent 4: Streamlit App. Assume all parquet files in `dat
 6. Add deployed URL to GitHub repo website field and top of README
 
 ---
-
-## Citadel Interview Talking Points
-- "I used skip-1 momentum — the signal at month-end t is computed from price[t-12] to price[t-1], explicitly excluding the most recent month to avoid short-term reversal contamination"
-- "I z-score each factor cross-sectionally and independently each month using only stocks with a valid score for that factor, so sparse fundamental coverage doesn't distort the composite"
-- "The composite requires at least 3 of 5 valid factor scores — this prevents stocks with thin coverage dominating the portfolio"
-- "I extended prices through January 2026 so the final rebalance signal formed at December 2025 has a valid one-month-forward exit — without this the last data point is unusable"
-- "The project has four documented limitations: survivorship bias, fundamental lookahead, static market cap, and an equal-weighted rather than cap-weighted benchmark. In production you'd use a point-in-time database like Compustat"
-- "I report Q5 one-way turnover separately from long-short combined turnover — they tell different stories. Q5 one-way is relevant for a long-only manager; combined is relevant for a market-neutral fund"
-- "Momentum has the highest turnover at roughly 30-40% monthly. At 5-10bps per side transaction cost that meaningfully erodes the gross spread — which is why many practitioners run momentum at lower frequency or apply turnover constraints"
-- "The composite equal-weights all five factors. A more rigorous approach would optimise weights using a covariance-regularised information ratio, or orthogonalise factors using a factor risk model to remove overlap between, say, quality and low-vol"
